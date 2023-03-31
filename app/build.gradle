@@ -105,6 +105,9 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.45"
     //noinspection GradleCompatible
     implementation 'com.android.support:palette-v7:28.0.0'
+
+    // flow layout for tags
+    implementation "com.google.accompanist:accompanist-flowlayout:0.17.0"
 }
 kapt {
     correctErrorTypes true
