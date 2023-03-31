@@ -44,8 +44,8 @@ fun CoinDetailScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
 
-                        Text(text = "${coin.rank}. ${coin.name}  (${coin.symbol}",
-                        style = MaterialTheme.typography.h2,
+                        Text(text = "${coin.rank}. ${coin.name}  (${coin.symbol})",
+                        style = MaterialTheme.typography.h4,
                         modifier = Modifier.weight(8f))
 
                         Text(

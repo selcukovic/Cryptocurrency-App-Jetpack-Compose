@@ -34,12 +34,12 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
-                        startDestination = Screen.CoinDetailScreen.route
+                        startDestination = Screen.CoinListScreen.route
                     ) {
                         composable(route = Screen.CoinListScreen.route){
                          CoinListScreen(navController)
                         }
-                        composable(route = Screen.CoinDetailScreen.route + "/{coinId"){
+                        composable(route = Screen.CoinDetailScreen.route + "/{coinId}"){
                             CoinDetailScreen()
                         }
                     }
