@@ -2,6 +2,9 @@ package com.nistruct.cryptocurrency.di
 
 import com.nistruct.cryptocurrency.BuildConfig
 import com.nistruct.cryptocurrency.common.Constants.BASE_URL
+import com.nistruct.cryptocurrency.data.remote.CoinPaprikaApi
+import com.nistruct.cryptocurrency.data.repository.CoinRepositoryImpl
+import com.nistruct.cryptocurrency.domain.repository.CoinRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,4 +44,13 @@ object AppModule {
             .build()
     }
 
+    @Singleton
+    @Provides
+    fun proviveCoinPaprikaApi(@Named("retrofit") retrofit: Retrofit) : CoinPaprikaApi{
+        return retrofit.create(CoinPaprikaApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCoinRepository(api : CoinPaprikaApi) : CoinRepository = CoinRepositoryImpl(api)
 }
